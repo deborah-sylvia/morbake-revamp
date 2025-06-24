@@ -35,7 +35,7 @@ const mockMenuItems: MenuItem[] = [
     name: "Nasi Goreng Special",
     description: "Fragrant fried rice with chicken, prawns, and vegetables",
     price: 25000,
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Nasi_goreng_indonesia.jpg",
+    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
     category: "main",
     rating: 4.8,
     isPopular: true,
@@ -46,7 +46,7 @@ const mockMenuItems: MenuItem[] = [
     name: "Ayam Bakar Madu",
     description: "Grilled chicken with honey glaze and sambal",
     price: 32000,
-    image: "https://asset.kompas.com/crops/yooMS5qQjrRN6wKVe_FBp_jjZGE=/0x0:1000x667/750x500/data/photo/2021/01/22/600a6bbc1001c.jpg",
+    image: "https://buckets.sasa.co.id/v1/AUTH_Assets/Assets/p/website/medias/page_medias/Screen_Shot_2023-01-09_at_17_40_36_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).png",
     category: "main",
     rating: 4.9,
     isPopular: true,
@@ -57,7 +57,7 @@ const mockMenuItems: MenuItem[] = [
     name: "Gado-Gado",
     description: "Traditional Indonesian salad with peanut sauce",
     price: 18000,
-    image: "https://asset.kompas.com/crops/MrdYDsxogO0J-jptk4cQKaFQEKs=/0x0:1000x667/750x500/data/photo/2021/03/27/605ed24c33816.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLzP8XeeMmJg5PchiCj5cldprtBBux7Rmb0Q&s",
     category: "appetizer",
     rating: 4.6,
     isPopular: false,
@@ -68,7 +68,7 @@ const mockMenuItems: MenuItem[] = [
     name: "Es Teh Manis",
     description: "Sweet iced tea - perfect refreshment",
     price: 8000,
-    image: "https://asset.kompas.com/crops/FKY3LD8Nv9O6RWYEwFn4_zCIBTE=/0x0:1000x667/750x500/data/photo/2023/03/16/6412e4c2e6a6e.jpg",
+    image: "https://nilaigizi.com/assets/images/produk/produk_1578041377.jpg",
     category: "beverage",
     rating: 4.5,
     isPopular: false,
@@ -79,7 +79,7 @@ const mockMenuItems: MenuItem[] = [
     name: "Sate Ayam",
     description: "Grilled chicken skewers with peanut sauce",
     price: 28000,
-    image: "https://asset.kompas.com/crops/6IOFcdHsXLhQHM-h7FbUqhQxJ28=/0x0:1000x667/750x500/data/photo/2021/03/27/605ef2bb7b7f3.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcGdsb1aGXMWmkKnG1NkeVY-qYdoDg3XrOmQ&s",
     category: "main",
     rating: 4.7,
     isPopular: true,
@@ -90,7 +90,7 @@ const mockMenuItems: MenuItem[] = [
     name: "Es Campur",
     description: "Mixed ice dessert with fruits and jellies",
     price: 15000,
-    image: "https://asset.kompas.com/crops/xYg_Ik1qg-zk0wl5HGU0E9iRFTo=/0x0:1000x667/750x500/data/photo/2020/11/05/5fa3c66d1e52f.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjpusqldo007KyiUzZUTWmqDatflVCl9-Qdg&s",
     category: "dessert",
     rating: 4.4,
     isPopular: false,
@@ -292,14 +292,15 @@ export default function HomePage() {
       <main className="px-4 pb-20">
         <div className="grid grid-cols-1 gap-4 mt-4">
           {filteredItems.map((item) => (
-            <Card key={item.id} className="overflow-hidden">
-              <div className="flex items-center">
-                <div className="w-24 h-24 relative flex-shrink-0">
+            <Card key={item.id} className="overflow-hidden min-h-24">
+              <div className="flex items-stretch h-full">
+                <div className="w-24 h-full relative flex-shrink-0 overflow-hidden rounded-l-lg">
                   <Image
                     src={item.image}
                     alt={item.name}
                     fill
-                    className="object-cover rounded-l-lg"
+                    style={{ objectFit: 'cover' }}
+                    sizes="96px"
                   />
                 </div>
                 <div className="flex-1 p-4">
